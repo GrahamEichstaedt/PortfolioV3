@@ -7,6 +7,19 @@
     box-sizing: border-box;
 }
 
+:root {
+    --black-white-gradient: linear-gradient(
+        45deg,
+        black,
+        white
+    );
+    --white-black-gradient: linear-gradient(
+        45deg,
+        white,
+        black
+    );
+}
+
 body,
 html {
     font-family: 'Onest', sans-serif;
@@ -14,19 +27,17 @@ html {
     line-height: 2;
     margin: 0;
     max-width: 100vw;
+    overflow-x: hidden;
     padding: 0;
 }
 
 .page {
     display: flex;
     min-height: 100vh;
+    /* margin-block: 5rem; */
 }
 
 /* First page styles */
-
-footer {
-    height: fit-content;
-}
 
 .header {
     display: flex;
@@ -34,7 +45,7 @@ footer {
     /* font-weight: 100; */
     justify-content: center;
     align-items: center;
-    max-width: 65%;
+    max-width: 75%;
     text-align: justify;
     margin: auto;
 }
@@ -61,13 +72,40 @@ footer {
 
 .grid-item {
     border: 1px solid snow;
-
+    position: relative; /* Needed to make sure cards show up */
 }
 
 .grid-container img {
     object-fit:fill;
     max-height: 100%;
     max-width: 100%;
+    height: 100%;
+}
+
+.grid-item::after {
+    content: 'Check out this project!';
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(200, 200, 200, .8); /* Adjust the color and transparency as needed */
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+  
+  .grid-item:hover::after {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 1;
+  }
+
+.project-info {
+    display: none;
 }
 
 /* After Grid */
@@ -78,17 +116,70 @@ footer {
     text-align: center;
 }
 
-/* Footer */
+/* Education */
 
-
-
-/* #svg {
-    height: 100%;
-    width: 100%;
+#education {
+    flex-direction: column;
+    align-items: center;
 
 }
 
-#svg polygon {
-    height: 100%;
-    width: 100%;
-} */
+.gold {
+    color: gold;
+}
+
+.red {
+    color: red;
+}
+
+.animate {
+    animation: fade-in 750ms ease-out 1250ms;
+    animation-fill-mode: both;
+}
+
+@keyframes fade-in {
+    0% {
+        transform: translateX(90%);
+        opacity: 0;
+    }
+
+    75% {
+        opacity: .25;
+    }
+
+    100% {
+        transform: none;
+        opacity: 1;
+    }
+}
+
+/* Skills */
+
+#skills {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.skill ul {
+    list-style-type: none;
+}
+
+
+
+/* Footer */
+
+footer {
+    all: none;
+    display: block;
+}
+
+#svg {
+    position: absolute;
+    /* bottom: -50%; */
+}
+
+.poly {
+    height: clamp(5rem, 50vh, 10rem);
+    width: clamp(5rem, 100vw, 10rem);
+}

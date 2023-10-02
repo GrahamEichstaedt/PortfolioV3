@@ -5,6 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Graham Eichstaedt</title>
     <link rel="stylesheet" href="styles/index.css">
+    <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
 </head>
 <body>
     <!-- * First Page -->
@@ -15,40 +19,85 @@
         </div>
     </header>
     <!-- * Grid with Projects / Images -->
-    <section class="grid-container">
+    <section class="grid-container page">
         <div class="grid-item">
+            <p class="project-info">Information about project 1.</p>
             <img src="images/angels-landing.jpg" alt="Project 1">
             <!-- <p>This is a thing</p> -->
         </div>
         <div class="grid-item">
+            <p class="project-info">Information about project 2.</p>
             <img src="images/yosemite-valley.jpg" alt="Project 2">
             <!-- <p>This is a thing</p> -->
         </div>
         <div class="grid-item">
+            <p class="project-info">Information about project 3.</p>
             <img src="images/olympic-np.jpg" alt="Project 3">
             <!-- <p>This is a thing</p> -->
         </div>
         <div class="grid-item">
+            <p class="project-info">Information about project 4.</p>
             <img src="images/glacier-np.jpg" alt="Project 4">
             <!-- <p>This is a thing</p> -->
         </div>
         <div class="grid-item">
+            <p class="project-info">Infomration about project 5.</p>
             <img src="images/arches-np.jpg" alt="Project 5">
             <!-- <p>This is a thing</p> -->
         </div>
         <div class="grid-item">
-            <img src="images/grand-teton.jpg" alt="">
+            <p class="project-info">Information about project 6.</p>
+            <img src="images/grand-teton.jpg" alt="Project 6">
             <!-- <p>This is a thing</p> -->
         </div>
     </section>
-    <section class="page">
+    <section id="education" class="page fade-in">
         <h2>Education</h2>
-        <p><span style="color: red;">Iowa</span> <span style="color: gold;">State</span> University: B.S. -  Management Information Systems</p>
+        <p><span class="red">Iowa</span> <span class="gold">State</span> University: B.S. - Management Information Systems</p>
+        <!-- <p class="fade-in"><span style="color: red;">Iowa</span> <span style="color: gold;">State</span> University: B.S. -  Management Information Systems</p> -->
     </section>
-    <footer>
+    <section class="page">
         <svg id="svg" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 100 100" preserveAspectRatio="meet">
-            <polygon points="0,15 100,0 100,45 0,65" style="fill: black"></polygon>
+            <!-- <polygon points="0,15 100,0 100,45 0,65" style="fill: black"></polygon> -->
+            <polygon class="poly left" points="0,20 100,40 100,80 0,60">
+                
+            </polygon>
         </svg>
+    </section>
+    <section id="skills" class="page">
+        <svg viewbox="0 0 100 100">
+
+            <polygon class="poly right" points="0,20 100,0 100,40 0,60">
+
+            </polygon>
+        </svg>
+        <h2 style="color: white; z-index: 100;">Skills</h2>
+        <div id="languages" class="skill">
+            <ul>
+                <li>HTML</li>
+                <li>CSS</li>
+                <li>JavaScript</li>
+                <li>Java</li>
+                <li>Kotlin</li>
+                <li>Python</li>
+                <li>MySQL</li>
+                <li>SASS</li>
+            </ul>
+        </div>
+        <div id="frameworks" class="skill">
+            <ul>
+                <li>React.JS</li>
+                <li>Redux</li>
+                <li>jQuery</li>
+                <li>Bootstrap</li>
+            </ul>
+        </div>
+
+
+    </section>
+    <footer class="page">
+
     </footer>
+    <script src="scripts/util.js" async defer></script>
 </body>
 </html>
