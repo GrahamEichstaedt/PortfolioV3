@@ -9,10 +9,8 @@
 function isInViewport(element) {
     const rect = element.getBoundingClientRect();
     return (
-        rect.top >= 0 &&
-        rect.left >= 0 &&
-        rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
-        rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+        rect.top <= 0 &&    // top of element is in viewport
+        rect.bottom <= (window.innerHeight || document.documentElement.clientHeight)
     );
 }
 
@@ -36,9 +34,9 @@ function isInViewport(element) {
   }
 
 
+
 document.addEventListener("DOMContentLoaded", function() {
-    const education = document.getElementsByClassName('fade-in')[0];
-    const elements = document.getElementsByClassName('fade-in');
+    const education = document.getElementById('education');
   
     // Checks if education is exists
     if(education) {

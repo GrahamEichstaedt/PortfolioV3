@@ -72,6 +72,8 @@ html {
 
 .grid-item {
     border: 1px solid snow;
+    font-family: 'Josefin Slab', serif;
+    font-weight: 600;
     position: relative; /* Needed to make sure cards show up */
 }
 
@@ -121,7 +123,7 @@ html {
 #education {
     flex-direction: column;
     align-items: center;
-
+    opacity: 0;
 }
 
 .gold {
@@ -133,9 +135,10 @@ html {
 }
 
 .animate {
-    animation: fade-in 750ms ease-out 1250ms;
+    animation: fade-in 250ms ease-out 250ms;
     animation-fill-mode: both;
 }
+
 
 @keyframes fade-in {
     0% {
@@ -153,16 +156,26 @@ html {
     }
 }
 
+
 /* Skills */
 
 #skills {
     display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.skill {
+    display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
     justify-content: space-evenly;
 }
 
 .skill ul {
     list-style-type: none;
+    margin: 0;
+    padding: 0;
 }
 
 
